@@ -20,7 +20,5 @@ public class ClaspTeleop extends OpMode {
             else robot.moveBackward(gamepad1.left_stick_y);
         }
     }
-    public void init() {
-        robot = new Anvil(hardwareMap, Anvil.Drivetrain.MECHANUM, telemetry);
-    }
+    public void init() { robot = new Anvil(hardwareMap, Anvil.Drivetrain.MECHANUM, telemetry); }
 }
