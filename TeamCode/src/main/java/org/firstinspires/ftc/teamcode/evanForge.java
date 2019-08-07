@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-public class Forge {
+public class evanForge {
     //Define servo and motor variables
     public DcMotor motor1, motor2, motor3, motor4;
     public DcMotor clawMotor;
@@ -18,10 +18,11 @@ public class Forge {
     public DcMotor[] forward, right, left;
 
     public enum Drivetrain {
-        OMNIDRIVE
+        OMNIDRIVE,
+        EVAN
     }
 
-    public Forge(HardwareMap ahwMap, Drivetrain type, Telemetry telem) {
+    public evanForge(HardwareMap ahwMap, Drivetrain type, Telemetry telem) {
         hwMap = ahwMap;
 
         telemetry = telem;
@@ -65,6 +66,9 @@ public class Forge {
                 right = new DcMotor[]{motor1, motor3};
                 left = new DcMotor[]{motor2, motor4};
                 break;
+            case EVAN:
+
+            break;
 
             default:
                 telemetry.addLine("Invalid type " + type + " passed to Anvil's init function. Nothing has been set up.");
