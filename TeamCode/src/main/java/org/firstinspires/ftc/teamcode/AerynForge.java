@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-public class Forge {
+public class AerynForge {
     //Define servo and motor variables
     public DcMotor motor1, motor2, motor3, motor4;
     public DcMotor clawMotor;
@@ -21,7 +21,7 @@ public class Forge {
         OMNIDRIVE
     }
 
-    public Forge(HardwareMap ahwMap, Drivetrain type, Telemetry telem) {
+    public AerynForge(HardwareMap ahwMap, Drivetrain type, Telemetry telem) {
         hwMap = ahwMap;
 
         telemetry = telem;
@@ -53,7 +53,7 @@ public class Forge {
                 //Weird drive train, only two wheels move for the robot to go forward. Will need to
                 // consider this when programming the robot to move.
                 motor1 = hwMap.dcMotor.get("motor1");
-                motor2 = hwMap.dcMotor.get("motor2");
+                motor2 = hwMap.dcMotor.get("motor1");
                 motor3 = hwMap.dcMotor.get("motor3");
                 motor4 = hwMap.dcMotor.get("motor4");
                 clawMotor = hwMap.dcMotor.get("clawMotor");
