@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -18,7 +19,8 @@ public class XanderLCForge {
     public DcMotor[] forward, right, left;
 
     public enum Drivetrain {
-        OMNIDRIVE
+        OMNIDRIVE,
+        TEST
     }
 
     public XanderLCForge(HardwareMap ahwMap, Drivetrain type, Telemetry telem) {
@@ -66,6 +68,15 @@ public class XanderLCForge {
                 left = new DcMotor[]{motor2, motor4};
                 break;
 
+                case TEST:
+                motor1 = hwMap.dcMotor.get("motor1");
+                        motor2 = hwMap.dcMotor.get("motor2");
+                        motor1.setDirection(DcMotor.Direction.FORWARD);
+                        motor2.setDirection(DcMotor.Direction.REVERSE);
+                        forward = new DcMotor[] {motor1, motor2};
+                        left = new DcMotor[] {motor2};
+                        right = new DcMotor[] {motor1};
+                    break;
             default:
                 telemetry.addLine("Invalid type " + type + " passed to Anvil's init function. Nothing has been set up.");
                 break;

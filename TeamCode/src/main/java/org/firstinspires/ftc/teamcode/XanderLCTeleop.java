@@ -11,14 +11,13 @@ public class XanderLCTeleop extends OpMode {
 
     private Anvil robot;
     public void init() {
-        robot = new Anvil(hardwareMap, Anvil.Drivetrain.MECHANUM, telemetry);
+        robot = new XanderLCForge(hardwareMap, XanderLCForge.Drivetrain.TEST, telemetry);
     }
     public void loop() {
 
 
     }
 }
-
 
 
 
