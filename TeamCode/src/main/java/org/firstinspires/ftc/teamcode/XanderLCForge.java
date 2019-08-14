@@ -68,15 +68,16 @@ public class XanderLCForge {
                 left = new DcMotor[]{motor2, motor4};
                 break;
 
-                case TEST:
+            case TEST:
                 motor1 = hwMap.dcMotor.get("motor1");
-                        motor2 = hwMap.dcMotor.get("motor2");
-                        motor1.setDirection(DcMotor.Direction.FORWARD);
-                        motor2.setDirection(DcMotor.Direction.REVERSE);
-                        forward = new DcMotor[] {motor1, motor2};
-                        left = new DcMotor[] {motor2};
-                        right = new DcMotor[] {motor1};
-                    break;
+                motor2 = hwMap.dcMotor.get("motor2");
+                motor1.setDirection(DcMotor.Direction.FORWARD);
+                motor2.setDirection(DcMotor.Direction.REVERSE);
+                forward = new DcMotor[] {motor1, motor2};
+                left = new DcMotor[] {motor2};
+                right = new DcMotor[] {motor1};
+                break;
+
             default:
                 telemetry.addLine("Invalid type " + type + " passed to Anvil's init function. Nothing has been set up.");
                 break;

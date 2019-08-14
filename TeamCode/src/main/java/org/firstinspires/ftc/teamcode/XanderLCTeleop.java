@@ -9,12 +9,11 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 public class XanderLCTeleop extends OpMode {
 
-    private Anvil robot;
+    private XanderLCForge robot;
     public void init() {
         robot = new XanderLCForge(hardwareMap, XanderLCForge.Drivetrain.TEST, telemetry);
     }
     public void loop() {
-
 
     }
 }
