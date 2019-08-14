@@ -72,17 +72,42 @@ public class XanderLCForge {
                 motor1 = hwMap.dcMotor.get("motor1");
                 motor2 = hwMap.dcMotor.get("motor2");
                 motor1.setDirection(DcMotor.Direction.FORWARD);
-                motor2.setDirection(DcMotor.Direction.REVERSE);
-                forward = new DcMotor[] {motor1, motor2};
-                left = new DcMotor[] {motor2};
-                right = new DcMotor[] {motor1};
+                motor2.setDirection(DcMotor.Direction.FORWARD);
+                forward = new DcMotor[]{motor1, motor2};
+                left = new DcMotor[]{motor1};
+                right = new DcMotor[]{motor2};
                 break;
 
             default:
                 telemetry.addLine("Invalid type " + type + " passed to Anvil's init function. Nothing has been set up.");
                 break;
         }
-        //Functions for the OpModes go here.
-        //The OpModes will need functions in order to make the code clean.
+    }
+    //Functions for the OpModes go here.
+    //The OpModes will need functions in order to make the code clean
+
+
+    public void robotFoward() {
+        motor1.setPower(1);
+        motor2.setPower(1);
+    }
+
+    public void robotReverse() {
+        motor1.setPower(-1);
+        motor2.setPower(-1);
+    }
+
+    public void robotLeft() {
+        motor1.setPower(-1);
+        motor2.setPower(1);
+    }
+
+    public void robotRight() {
+        motor1.setPower(1);
+        motor2.setPower(-1);
+    }
+    public void robotRest(){
+        motor1.setPower(0);
+        motor2.setPower(0);
     }
 }
