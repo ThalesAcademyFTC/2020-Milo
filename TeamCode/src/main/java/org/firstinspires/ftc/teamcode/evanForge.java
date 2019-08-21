@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -67,14 +68,32 @@ public class evanForge {
                 left = new DcMotor[]{motor2, motor4};
                 break;
             case EVAN:
-
-            break;
-
+               motor1 = hwMap.dcMotor.get("motor1");
+                motor1.setDirection(DcMotor.Direction.FORWARD);
+               motor2 = hwMap.dcMotor.get("motor2");
+                motor2.setDirection(DcMotor.Direction.FORWARD);
+                forward = new DcMotor[]{motor1, motor2};
+                right = new DcMotor[]{motor1};
+                left = new DcMotor[] {motor2};
+                break;
             default:
                 telemetry.addLine("Invalid type " + type + " passed to Anvil's init function. Nothing has been set up.");
                 break;
         }
-        //Functions for the OpModes go here.
-        //The OpModes will need functions in order to make the code clean.
     }
+    //Functions for the OpModes go here.
+    //The OpModes will need functions in order to make the code clean.
+    public void forward(double speed){
+         motor1.setPower(speed);
+         motor2.setPower(speed);
+    }
+    public void right(double speed){
+        motor1.setPower(speed);
+        motor2.setPower(-speed);
+    }
+    public void stop(){
+        motor1.setPower(0);
+        motor2.setPower(0);
+    }
+
 }

@@ -9,11 +9,22 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 public class evanTeleop extends OpMode {
 
-    private Anvil robot;
+    private evanForge robot;
     public void init() {
-
+        robot = new evanForge(hardwareMap, evanForge.Drivetrain.EVAN, telemetry);
     }
     public void loop() {
+        if (gamepad1.left_stick_y > 0) {
+            robot.forward(-1);
+        } else if (gamepad1.left_stick_x > 0) {
+            robot.right(-1);
+        } else if (gamepad1.left_stick_x < 0){
+            robot.right(1);
+        } else if (gamepad1.left_stick_y < 0){
+            robot.forward (1);
+        } else {
+            robot.stop();
+        }
 
     }
 }
