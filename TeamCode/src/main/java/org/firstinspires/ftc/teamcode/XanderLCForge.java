@@ -87,24 +87,14 @@ public class XanderLCForge {
     //The OpModes will need functions in order to make the code clean
 
 
-    public void robotFoward() {
-        motor1.setPower(1);
-        motor2.setPower(1);
+    public void robotFoward(double speed) {
+        motor1.setPower(speed);
+        motor2.setPower(speed);
     }
 
-    public void robotReverse() {
-        motor1.setPower(-1);
-        motor2.setPower(-1);
-    }
-
-    public void robotLeft() {
-        motor1.setPower(-1);
-        motor2.setPower(1);
-    }
-
-    public void robotRight() {
-        motor1.setPower(1);
-        motor2.setPower(-1);
+    public void robotLeft(double speed) {
+        motor1.setPower(speed);
+        motor2.setPower(-speed);
     }
     public void robotRest(){
         motor1.setPower(0);

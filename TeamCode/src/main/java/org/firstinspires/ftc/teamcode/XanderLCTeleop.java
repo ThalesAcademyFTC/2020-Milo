@@ -20,14 +20,14 @@ public class XanderLCTeleop extends OpMode {
     public void loop() {
         if (gamepad1.atRest()){
             robot.robotRest();
-        }else if (gamepad1.left_stick_y < 0){
-            robot.robotFoward();
         }else if (gamepad1.left_stick_y > 0){
-            robot.robotReverse();
+            robot.robotFoward(gamepad1.left_stick_y);
+        }else if (gamepad1.left_stick_y < 0){
+            robot.robotFoward(gamepad1.left_stick_y);
         }else if (gamepad1.right_stick_x < 0){
-            robot.robotRight();
+            robot.robotLeft(gamepad1.left_stick_x);
         }else if (gamepad1.right_stick_x > 0){
-            robot.robotLeft();
+            robot.robotLeft(gamepad1.left_stick_x);
         }
     }
 }
