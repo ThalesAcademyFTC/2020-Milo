@@ -41,7 +41,7 @@ import static org.firstinspires.ftc.teamcode.XanderLCForge.Drivetrain.TEST;
 
 
 @Autonomous(name="Template", group="Pushbot")
-//@Disabled
+@Disabled
 
 public class TestAuton extends LinearOpMode {
     private XanderLCForge robot;

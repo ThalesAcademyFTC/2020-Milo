@@ -36,7 +36,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import static org.firstinspires.ftc.teamcode.XanderLCForge.Drivetrain.TEST;
 
 
-@Autonomous(name="Template", group="Pushbot")
+@Autonomous(name="EvanAuton", group="Pushbot")
 //@Disabled
 
 public class evansauton extends LinearOpMode {
