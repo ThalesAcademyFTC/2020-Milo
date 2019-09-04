@@ -52,29 +52,29 @@ public class XanderAuton extends LinearOpMode {
         robot.robotFoward(1);
         sleep(1500);
         robot.robotLeft(1);
-        sleep(675);
+        sleep(625);
         robot.robotFoward(1);
         sleep(1500);
         robot.robotLeft(1);
-        sleep(675);
+        sleep(625);
         robot.robotFoward(1);
         sleep(1500);
         robot.robotLeft(1);
-        sleep(675);
+        sleep(625);
         robot.robotFoward(1);
         sleep(1500);
         robot.robotLeft(1);
-        sleep(675);
+        sleep(625);
         robot.robotFoward(1);
         sleep(1500);
         robot.robotLeft(1);
-        sleep(675);
+        sleep(625);
         robot.robotRest();
         while (opModeIsActive()) {
             robot.robotFoward(1);
             sleep(1500);
             robot.robotLeft(1);
-            sleep(675);
+            sleep(625);
         }
 
 
