@@ -52,15 +52,15 @@ public class evansauton extends LinearOpMode {
         robot.forward(1);
         sleep(1000);
         robot.right(1);
-        sleep(650);
+        sleep(700);
         robot.forward(1);
         sleep(1000);
         robot.right(1);
-        sleep(650);
+        sleep(700);
         robot.forward(1);
         sleep(1000);
         robot.right(1);
-        sleep(650);
+        sleep(700);
         robot.forward(1);
         sleep(1000);
         robot.stop();
