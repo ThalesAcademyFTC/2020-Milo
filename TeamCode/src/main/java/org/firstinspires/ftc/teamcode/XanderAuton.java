@@ -36,7 +36,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import static org.firstinspires.ftc.teamcode.XanderLCForge.Drivetrain.TEST;
 
 
-@Autonomous(name="Template", group="Pushbot")
+@Autonomous(name="XanderAuton", group="Pushbot")
 //@Disabled
 
 public class XanderAuton extends LinearOpMode {
@@ -62,9 +62,20 @@ public class XanderAuton extends LinearOpMode {
         robot.robotLeft(1);
         sleep(750);
         robot.robotFoward(1);
-
+        sleep(1000);
+        robot.robotLeft(1);
+        sleep(750);
+        robot.robotFoward(1);
+        sleep(1000);
+        robot.robotLeft(1);
+        sleep(750);
+        robot.robotFoward(1);
+        robot.robotRest();
         while (opModeIsActive()) {
-
+            robot.robotFoward(1);
+            sleep(1000);
+            robot.robotLeft(1);
+            sleep(750);
         }
 
 
