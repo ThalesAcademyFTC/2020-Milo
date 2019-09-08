@@ -26,6 +26,8 @@ public class Anvil {
 
     public DcMotor[] forward, right, left, special, unique;
 
+    private double ticksPerInch = 0;
+
     public boolean hs = true;
 
     public enum Drivetrain {
@@ -221,6 +223,26 @@ public class Anvil {
     public void holoMoveLeft(double pace) {
         for (DcMotor x: unique) x.setPower(-pace);
         for (DcMotor x:special) x.setPower(pace);
+    }
+    public void moveForTicks(int ticks) {
+        //Blocks until the robot has gotten to the desired location.
+        for (DcMotor x : forward) {
+            x.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            x.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            x.setTargetPosition(ticks);
+        }
+        this.moveForward(1.0);
+        while (forward[0].isBusy()) {
+            continue;
+        }
+        this.rest();
+        for (DcMotor x : forward) {
+            x.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        }
+    }
+    public void moveByInches(double inches) {
+        //Requires that the "ticksPerInch" variable is correctly set.
+        moveForTicks((int) (inches * ticksPerInch));
     }
 
     private void sleep(long milliseconds) {
