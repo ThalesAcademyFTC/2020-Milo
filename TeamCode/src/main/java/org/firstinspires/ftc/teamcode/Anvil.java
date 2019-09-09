@@ -226,6 +226,7 @@ public class Anvil {
     }
     public void moveForTicks(int ticks) {
         //Blocks until the robot has gotten to the desired location.
+        this.rest();
         for (DcMotor x : forward) {
             x.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             x.setMode(DcMotor.RunMode.RUN_TO_POSITION);
