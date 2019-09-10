@@ -1,2 +1,2 @@
-## Welcome to Milo.
-Milo's functions and features have yet to be determined. Original concept and credits to Dallas Crenshaw.
+## Practice Repository
+This repository was meant to tortur- I mean help our new members with their FTC coding abilities
